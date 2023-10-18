@@ -24,7 +24,7 @@
   background-size: auto;
   background-repeat: no-repeat;
 
-  &__title {
+  &__name {
     margin-bottom: 4px;
 
     font-size: 55px;
@@ -47,9 +47,14 @@
     width: 95px;
   }
 
-  &__temp {
+  &__temp,
+  span {
     font-size: 65px;
     font-weight: 700;
+  }
+
+  span {
+    display: inline;
   }
 
   &__status {
