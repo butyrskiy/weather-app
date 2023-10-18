@@ -1,0 +1,151 @@
+.main-view {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  min-height: 670px;
+  min-width: 1010px;
+}
+
+.info {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 500px;
+  padding: 28px 40px;
+
+  background-image: url("../img/background-img.png");
+  background-size: auto;
+  background-repeat: no-repeat;
+
+  &__title {
+    margin-bottom: 4px;
+
+    font-size: 55px;
+  }
+
+  &__date {
+    margin-bottom: 8px;
+
+    font-size: 27px;
+    font-weight: 500;
+  }
+
+  &__day {
+    font-size: 23px;
+    font-weight: 600;
+  }
+
+  &__img {
+    height: 95px;
+    width: 95px;
+  }
+
+  &__temp {
+    font-size: 65px;
+    font-weight: 700;
+  }
+
+  &__status {
+    font-weight: 500;
+  }
+}
+
+.locations {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 560px;
+  height: 666px;
+  padding: 28px 40px;
+  padding-left: 90px;
+
+  border-radius: 25px;
+  background: #222831;
+
+  &__input {
+    position: relative;
+
+    width: 330px;
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: 45px;
+    padding: 5px 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--light-color);
+    text-align: center;
+
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+      91deg,
+      rgba(144, 217, 224, 0.9) 0.2%,
+      rgba(84, 96, 230, 0.9) 100%
+    );
+
+    &:focus::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &:focus::-moz-placeholder {
+      color: transparent;
+    }
+    &:focus:-moz-placeholder {
+      color: transparent;
+    }
+    &:focus:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &::-webkit-input-placeholder {
+      color: var(--light-color);
+    }
+    &::-moz-placeholder {
+      color: var(--light-color);
+    } /* Firefox 19+ */
+    &:-moz-placeholder {
+      color: var(--light-color);
+    } /* Firefox 18- */
+    &:-ms-input-placeholder {
+      color: var(--light-color);
+    }
+  }
+
+  &__title {
+    margin-left: 5px;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  &__list {
+    max-height: 450px;
+    padding: 22px 26px;
+    padding-bottom: 15px;
+    overflow: auto;
+
+    border-radius: 10px;
+    background: linear-gradient(
+      91deg,
+      rgba(144, 217, 224, 0.9) 0.2%,
+      rgba(84, 96, 230, 0.9) 100%
+    );
+  }
+
+  &__item {
+    margin-bottom: 5px;
+
+    font-size: 27px;
+    font-weight: 600;
+  }
+}

@@ -1,0 +1,14 @@
+/* Vendor */
+@import "./vendor/normalize";
+
+/* Basic */
+@import "./vars";
+@import "./mixins";
+@import "./fonts";
+@import "./global";
+
+/* Large components */
+@import "./components/main-view";
+
+/* Small components */
+// @import "./components/header-contacts";

@@ -1,0 +1,13 @@
+:root {
+  // base
+  --font-family: "Montserrat", sans-serif;
+  --font-weight: 700;
+  --content-width: 1015px;
+  --container-offset: 35px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --light-color: #fff;
+  --black-color: #000;
+  --background-color: #343d4b;
+}
