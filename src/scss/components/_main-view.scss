@@ -24,10 +24,28 @@
   background-size: auto;
   background-repeat: no-repeat;
 
+  &__top {
+    position: relative;
+  }
+
   &__name {
+    display: inline-block;
     margin-bottom: 4px;
 
     font-size: 55px;
+  }
+
+  &__favorit-btn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+
+    width: 50px;
+    height: 50px;
+  }
+
+  &__favorit-img {
+    width: 100%;
   }
 
   &__date {
