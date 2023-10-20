@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/main.min.css" />
+  <title>Weather app</title>
+</head>
+
+  <body>
+    <div class="container">
+  <div class="main-view">
+    <div class="info">
+      <div class="info__top">
+        <div class="info__name">---</div>
+        <button class="info__favorit-btn btn-reset">
+          <img src="../img/icons/heart.png" alt="" class="info__favorit-img" />
+        </button>
+        <div class="info__date">20 Jun 2022</div>
+        <div class="info__day">Tuesday</div>
+      </div>
+      <div class="info__bottom">
+        <img class="info__img" src="img/icons/sun.png" alt="icon" />
+        <div class="info__temp">---&nbsp;&deg;C</div>
+        <div class="info__status">Sunny</div>
+      </div>
+    </div>
+    <div class="locations">
+      <div class="locations__change">
+        <form class="locations__form" action="">
+          <input
+            class="locations__input"
+            type="text"
+            placeholder="Search location"
+          />
+        </form>
+      </div>
+      <div class="locations__favorite">
+        <div class="locations__title">Favorite locations:</div>
+        <ul class="locations__list list-reset">
+          <li class="locations__prev">Add your first favorite city</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script defer src="js/main.min.js"></script>
+  </body>
+</html>
