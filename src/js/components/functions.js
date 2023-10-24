@@ -9,4 +9,14 @@ function searchCity(name) {
   return res;
 }
 
-export { searchCityIndex, searchCity };
+function firstLetterToUpperCase(str) {
+  const strToArr = str.split(' ');
+  const res = strToArr.map(el => {
+    const firstLetter = el[0].toUpperCase();
+    return firstLetter + el.slice(1);
+  });
+
+  return res.join(' ');
+}
+
+export { searchCityIndex, searchCity, firstLetterToUpperCase };

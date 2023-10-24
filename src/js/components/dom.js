@@ -1,19 +1,22 @@
-import { tempValue, cityValue, favoriteList, locationsPrev } from "./constants";
+import { tempValue, cityValue, favoriteList, locationsPrev, descriptionEl } from "./constants";
 import { cityArr } from "../main";
-import { searchCityIndex } from "./functions";
+import { searchCityIndex, firstLetterToUpperCase } from "./functions";
 
 function setWeatherInfo(data) {
   const cityName = data.name;
   const {temp} = data.main;
+  const {description} = data.weather[0];
 
   const tempFahrenheit = (temp - 273.5).toFixed(1);
 
   tempValue.textContent = `${tempFahrenheit} °C`;
   cityValue.textContent = cityName;
+  descriptionEl.textContent = firstLetterToUpperCase(description);
 
   cityArr.push({
-    cityName: data.name,
-    temp: data.main.temp,
+    cityName,
+    temp,
+    description,
     isFavorite: false,
   });
 }
@@ -33,7 +36,7 @@ function addFavoriteCity() {
       <button class="locations__btn btn-reset">${cityName}</button>
       <button class="locations__remove-btn btn-reset">
         <img
-          src="icons/cross.png"
+          src="img/icons/cross.png"
           alt=""
           class="locations__remove-img"
         />
