@@ -1,3 +1,4 @@
+import { infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage } from "./constants";
 import { cityArr } from "../main";
 
 function searchCityIndex(name) {
@@ -19,4 +20,12 @@ function firstLetterToUpperCase(str) {
   return res.join(' ');
 }
 
-export { searchCityIndex, searchCity, firstLetterToUpperCase };
+function startSearchCity() {
+  infoBtn.classList.remove('is-hidden');
+  infoDiv.classList.remove('info--start');
+  infoTopDiv.classList.remove('is-hidden');
+  infoBottomDiv.classList.remove('is-hidden');
+  infoStartMessage.remove();
+}
+
+export { searchCityIndex, searchCity, firstLetterToUpperCase, startSearchCity };

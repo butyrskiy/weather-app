@@ -1,7 +1,10 @@
 <div class="container">
   <div class="main-view">
-    <div class="info">
-      <div class="info__top">
+    <div class="info info--start">
+      <div class="info__start-message">
+        Welcome to weather app! Find out the weather forecast in any city!
+      </div>
+      <div class="info__top is-hidden">
         <div class="info__name">---</div>
         <button class="info__favorit-btn btn-reset">
           <img
@@ -13,10 +16,12 @@
         <div class="info__date">20 Jun 2022</div>
         <div class="info__day">Tuesday</div>
       </div>
-      <div class="info__bottom">
+      <div class="info__bottom is-hidden">
         <img class="info__img" src="img/icons/sun.png" alt="weather icon" />
         <div class="info__temp">---&nbsp;&deg;C</div>
+        <div class="info__feels-like">Feels like: ---&nbsp;&deg;C</div>
         <div class="info__status">---</div>
+        <button class="info__btn btn-reset is-hidden">More info</button>
       </div>
     </div>
     <div class="locations">

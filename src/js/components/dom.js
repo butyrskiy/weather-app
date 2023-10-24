@@ -1,22 +1,28 @@
-import { tempValue, cityValue, favoriteList, locationsPrev, descriptionEl } from "./constants";
+import { tempValue, cityValue, favoriteList, locationsPrev, descriptionEl, feelsLikeEl } from "./constants";
 import { cityArr } from "../main";
-import { searchCityIndex, firstLetterToUpperCase } from "./functions";
+import { searchCityIndex, firstLetterToUpperCase, startSearchCity } from "./functions";
 
 function setWeatherInfo(data) {
   const cityName = data.name;
   const {temp} = data.main;
+  const feelsLike = data.main.feels_like;
   const {description} = data.weather[0];
 
   const tempFahrenheit = (temp - 273.5).toFixed(1);
+  const feelsLikeFahrenheit = (feelsLike - 273.5).toFixed(1);
 
-  tempValue.textContent = `${tempFahrenheit} °C`;
+  startSearchCity();
+
   cityValue.textContent = cityName;
+  tempValue.textContent = `${tempFahrenheit} °C`;
+  feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
   descriptionEl.textContent = firstLetterToUpperCase(description);
 
   cityArr.push({
     cityName,
     temp,
     description,
+    feelsLike,
     isFavorite: false,
   });
 }
@@ -67,9 +73,13 @@ function chooseCity(e) {
     const elem = e.target.textContent;
     const cityIndex = searchCityIndex(elem);
     const tempFahrenheit = (cityArr[cityIndex].temp - 273.5).toFixed(1);
-    
+    const description = firstLetterToUpperCase(cityArr[cityIndex].description);
+    const feelsLikeFahrenheit = (cityArr[cityIndex].feelsLike - 273.5).toFixed(1);
+
     tempValue.textContent = `${tempFahrenheit} °C`;
     cityValue.textContent = cityArr[cityIndex].cityName;
+    descriptionEl.textContent = description;
+    feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
   }
 }
 
