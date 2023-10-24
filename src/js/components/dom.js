@@ -33,7 +33,7 @@ function addFavoriteCity() {
       <button class="locations__btn btn-reset">${cityName}</button>
       <button class="locations__remove-btn btn-reset">
         <img
-          src="../img/icons/cross.png"
+          src="icons/cross.png"
           alt=""
           class="locations__remove-img"
         />
