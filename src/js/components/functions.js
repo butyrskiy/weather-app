@@ -1,4 +1,5 @@
-import { infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage } from "./constants";
+/* eslint-disable import/no-cycle */
+import { infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, weatherImgEl, imgUrl } from "./constants";
 import { cityArr } from "../main";
 
 function searchCityIndex(name) {
@@ -28,4 +29,8 @@ function startSearchCity() {
   infoStartMessage.remove();
 }
 
-export { searchCityIndex, searchCity, firstLetterToUpperCase, startSearchCity };
+function setUrlFromWeatherIcon(iconId) {
+  weatherImgEl.setAttribute('src', `${imgUrl}/${iconId}@2x.png`)
+}
+
+export { searchCityIndex, searchCity, firstLetterToUpperCase, startSearchCity, setUrlFromWeatherIcon };

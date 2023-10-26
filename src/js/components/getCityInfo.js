@@ -2,9 +2,14 @@ import { input, serverUrl, apiKey } from "./constants";
 import { setWeatherInfo } from "./dom";
 
 function getCityInfo(url) {
-  fetch(url)
-  .then((response) => response.json())
-  .then((data) => setWeatherInfo(data));
+  try {
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => setWeatherInfo(data))
+    .catch(err => console.log(err));
+  } catch(err) {
+    console.log(err);
+  }
 }
 
 function getCityName(e) {

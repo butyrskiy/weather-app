@@ -1,0 +1,49 @@
+.more-info {
+  position: absolute;
+  top: 73px;
+  right: 18px;
+
+  width: 560px;
+  height: 666px;
+  padding: 28px 40px;
+  padding-left: 90px;
+
+  border-radius: 25px;
+  background: #3e4d64;
+
+  &__box {
+    margin-top: 71px;
+  }
+
+  &-close__btn {
+    position: absolute;
+    top: 31px;
+    right: 26px;
+
+    width: 50px;
+    height: 50px;
+
+    opacity: 0.6;
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 4px;
+    padding-bottom: 7px;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #fff;
+
+    & span {
+      margin-left: auto;
+
+      font-family: "Helvetica", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+
+      color: rgb(244 194 49 / 90%);
+    }
+  }
+}

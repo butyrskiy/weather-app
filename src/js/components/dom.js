@@ -1,28 +1,44 @@
-import { tempValue, cityValue, favoriteList, locationsPrev, descriptionEl, feelsLikeEl } from "./constants";
+/* eslint-disable import/no-cycle */
+import * as constants from "./constants";
 import { cityArr } from "../main";
-import { searchCityIndex, firstLetterToUpperCase, startSearchCity } from "./functions";
+import { searchCityIndex, firstLetterToUpperCase, startSearchCity, setUrlFromWeatherIcon } from "./functions";
+import { getDate } from "./date";
 
 function setWeatherInfo(data) {
   const cityName = data.name;
   const {temp} = data.main;
   const feelsLike = data.main.feels_like;
   const {description} = data.weather[0];
+  const {sunrise} = data.sys;
+  const {sunset} = data.sys;
+  const date = data.dt;
+  const {timezone} = data;
+  const {icon} = data.weather[0];
 
   const tempFahrenheit = (temp - 273.5).toFixed(1);
   const feelsLikeFahrenheit = (feelsLike - 273.5).toFixed(1);
 
   startSearchCity();
+  setUrlFromWeatherIcon(icon);
 
-  cityValue.textContent = cityName;
-  tempValue.textContent = `${tempFahrenheit} °C`;
-  feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
-  descriptionEl.textContent = firstLetterToUpperCase(description);
+  constants.cityValue.textContent = cityName;
+  constants.tempValue.textContent = `${tempFahrenheit} °C`;
+  constants.feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
+  constants.descriptionEl.textContent = firstLetterToUpperCase(description);
+  constants.infoDateEl.textContent = `${getDate(date).day} ${getDate(date).month} ${getDate(date).year}`;
+  constants.infoDayEl.textContent = `${getDate(date).nameDay}`;
+
 
   cityArr.push({
     cityName,
     temp,
     description,
     feelsLike,
+    sunrise,
+    sunset,
+    timezone,
+    date,
+    icon,
     isFavorite: false,
   });
 }
@@ -49,8 +65,8 @@ function addFavoriteCity() {
       </button>
     </li>
     `;
-    locationsPrev.remove();
-    favoriteList.insertAdjacentHTML('afterbegin', favoriteCityHTML);
+    constants.locationsPrev.remove();
+    constants.favoriteList.insertAdjacentHTML('afterbegin', favoriteCityHTML);
   }
 }
 
@@ -76,10 +92,12 @@ function chooseCity(e) {
     const description = firstLetterToUpperCase(cityArr[cityIndex].description);
     const feelsLikeFahrenheit = (cityArr[cityIndex].feelsLike - 273.5).toFixed(1);
 
-    tempValue.textContent = `${tempFahrenheit} °C`;
-    cityValue.textContent = cityArr[cityIndex].cityName;
-    descriptionEl.textContent = description;
-    feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
+    constants.tempValue.textContent = `${tempFahrenheit} °C`;
+    constants.cityValue.textContent = cityArr[cityIndex].cityName;
+    constants.descriptionEl.textContent = description;
+    constants.feelsLikeEl.textContent = `Feels like: ${feelsLikeFahrenheit} °C`;
+
+    setUrlFromWeatherIcon(cityArr[cityIndex].icon);
   }
 }
 

@@ -12,8 +12,15 @@ const infoDiv = document.querySelector('.info');
 const infoTopDiv = document.querySelector('.info__top');
 const infoBottomDiv = document.querySelector('.info__bottom');
 const infoStartMessage = document.querySelector('.info__start-message');
+const moreInfoBtn = document.querySelector('.info__btn');
+const moreInfoEl = document.querySelector('.more-info');
+const moreInfoCloseBtn = document.querySelector('.more-info-close__btn');
+const infoDateEl = document.querySelector('.info__date');
+const infoDayEl = document.querySelector('.info__day');
+const weatherImgEl = document.querySelector('.info__img');
 
 const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
+const imgUrl = 'https://openweathermap.org/img/wn/';
 
-export { form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage };
+export { form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, moreInfoBtn, moreInfoEl, moreInfoCloseBtn, infoDateEl, infoDayEl, weatherImgEl, imgUrl };
