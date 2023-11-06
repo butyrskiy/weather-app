@@ -33,7 +33,11 @@
         <div class="info__day">Tuesday</div>
       </div>
       <div class="info__bottom is-hidden">
-        <img class="info__img" src="img/icons/sun.png" alt="weather icon" />
+        <img
+          class="info__img"
+          src="https://openweathermap.org/img/wn/09n@2x.png"
+          alt="weather icon"
+        />
         <div class="info__temp">---&nbsp;&deg;C</div>
         <div class="info__feels-like">Feels like: ---&nbsp;&deg;C</div>
         <div class="info__status">---</div>
@@ -54,9 +58,26 @@
         <div class="locations__title">Favorite locations:</div>
         <ul class="locations__list list-reset">
           <li class="locations__prev">
-            Press the heart icon and add your first favorite city
+            Find a city and press the heart icon to add your first favorite city
           </li>
         </ul>
+      </div>
+    </div>
+    <div class="more-info is-hidden">
+      <div class="more-info__box">
+        <button class="more-info-close__btn btn-reset">
+          <img src="img/icons/cross.png" alt="" class="more-info-close__img" />
+        </button>
+        <p class="more-info__item">Sunrise: <span id="sunrise">9:00</span></p>
+        <p class="more-info__item">Sunset: <span id="sunset">19:00</span></p>
+        <p class="more-info__item">
+          Atmospheric pressure: <span id="pressure">1015 hPa</span>
+        </p>
+        <p class="more-info__item">Humidity: <span id="humidity">64%</span></p>
+        <p class="more-info__item">
+          Visibility: <span id="visibility">10 km</span>
+        </p>
+        <p class="more-info__item">Wind speed: <span id="wind">2 m/s</span></p>
       </div>
     </div>
   </div>
