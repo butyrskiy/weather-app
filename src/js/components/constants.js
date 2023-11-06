@@ -19,11 +19,20 @@ const infoDateEl = document.querySelector('.info__date');
 const infoDayEl = document.querySelector('.info__day');
 const weatherImgEl = document.querySelector('.info__img');
 
+const infoObj = {
+  sunriseEl: document.getElementById('sunrise'),
+  sunsetEl: document.getElementById('sunset'),
+  pressureEl: document.getElementById('pressure'),
+  humidityEl: document.getElementById('humidity'),
+  visibilityEl: document.getElementById('visibility'),
+  windEl: document.getElementById('wind'),
+};
+
 const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
 const imgUrl = 'https://openweathermap.org/img/wn/';
 
 export {
   // eslint-disable-next-line max-len
-  form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, moreInfoBtn, moreInfoEl, moreInfoCloseBtn, infoDateEl, infoDayEl, weatherImgEl, imgUrl,
+  form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, moreInfoBtn, moreInfoEl, moreInfoCloseBtn, infoDateEl, infoDayEl, weatherImgEl, imgUrl, infoObj,
 };

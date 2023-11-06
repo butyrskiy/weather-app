@@ -5,7 +5,7 @@ import {
 } from './functions';
 import { getDate } from './date';
 import { storage } from './localStorage';
-import { cityArr } from './getCityInfo';
+import { cityArr } from './fetchData';
 
 function renderCity(data) {
   const cityName = data.name;

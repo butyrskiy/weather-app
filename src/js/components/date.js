@@ -104,4 +104,44 @@ function getDate(date) {
   return objDate;
 }
 
-export { getDate };
+const convertTime = {
+  sunriseTime(sunrise) {
+    let convertSunriseOurs;
+    let convertSunriseMinutes;
+
+    if (fromUnixTime(sunrise).getHours() < 10) {
+      convertSunriseOurs = `0${fromUnixTime(sunrise).getHours()}`;
+    } else {
+      convertSunriseOurs = fromUnixTime(sunrise).getHours();
+    }
+
+    if (fromUnixTime(sunrise).getMinutes() < 10) {
+      convertSunriseMinutes = `${fromUnixTime(sunrise).getMinutes()}0`;
+    } else {
+      convertSunriseMinutes = fromUnixTime(sunrise).getMinutes();
+    }
+
+    return `${convertSunriseOurs}:${convertSunriseMinutes}`;
+  },
+
+  sunsetTime(sunset) {
+    let convertSunsetOurs;
+    let convertSunsetMinutes;
+
+    if (fromUnixTime(sunset).getHours() < 10) {
+      convertSunsetOurs = `0${fromUnixTime(sunset).getHours()}`;
+    } else {
+      convertSunsetOurs = fromUnixTime(sunset).getHours();
+    }
+
+    if (fromUnixTime(sunset).getMinutes() < 10) {
+      convertSunsetMinutes = `${fromUnixTime(sunset).getMinutes()}0`;
+    } else {
+      convertSunsetMinutes = fromUnixTime(sunset).getMinutes();
+    }
+
+    return `${convertSunsetOurs}:${convertSunsetMinutes}`;
+  },
+};
+
+export { getDate, convertTime };

@@ -2,7 +2,7 @@
 import {
   infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, weatherImgEl, imgUrl,
 } from './constants';
-import { cityArr } from './getCityInfo';
+import { cityArr } from './fetchData';
 import { addFavoriteCity, favoriteCitiesSet } from './renderFavoriteCities';
 import { storage } from './localStorage';
 
