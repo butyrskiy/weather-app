@@ -23,4 +23,7 @@ const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
 const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
 const imgUrl = 'https://openweathermap.org/img/wn/';
 
-export { form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, moreInfoBtn, moreInfoEl, moreInfoCloseBtn, infoDateEl, infoDayEl, weatherImgEl, imgUrl };
+export {
+  // eslint-disable-next-line max-len
+  form, input, serverUrl, apiKey, tempValue, cityValue, favoritBtn, favoriteList, locationsPrev, descriptionEl, feelsLikeEl, infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, moreInfoBtn, moreInfoEl, moreInfoCloseBtn, infoDateEl, infoDayEl, weatherImgEl, imgUrl,
+};

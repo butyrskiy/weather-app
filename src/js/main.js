@@ -1,16 +1,18 @@
-/* eslint-disable import/no-cycle */
-import { form, favoritBtn, favoriteList, moreInfoBtn, moreInfoCloseBtn } from "./components/constants";
-import { getCityName } from "./components/getCityInfo";
-import { addFavoriteCity, removeFavoriteCity, chooseCity } from "./components/dom";
-import { getMoreInfo } from "./components/more-info";
-
-const cityArr = [];
+import {
+  form, favoritBtn, favoriteList, moreInfoBtn, moreInfoCloseBtn,
+} from './components/constants';
+import { getCityName } from './components/getCityInfo';
+import { chooseFavoriteCity } from './components/renderFavoriteCities';
+import { searchFavoriteCity } from './components/functions';
+import { removeFavoriteCity } from './components/removeCity';
+import { getMoreInfo } from './components/more-info';
+import { startApp } from './components/startApp';
 
 form.addEventListener('submit', getCityName);
-favoritBtn.addEventListener('click', addFavoriteCity);
+favoritBtn.addEventListener('click', searchFavoriteCity);
 favoriteList.addEventListener('click', removeFavoriteCity);
-favoriteList.addEventListener('click', chooseCity);
+favoriteList.addEventListener('click', chooseFavoriteCity);
 moreInfoBtn.addEventListener('click', getMoreInfo);
 moreInfoCloseBtn.addEventListener('click', getMoreInfo);
 
-export { cityArr };
+startApp();

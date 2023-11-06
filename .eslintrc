@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+
+  "extends": ["airbnb", "eslint:recommended"],
+
+  "rules": {
+    "no-plusplus": "off",
+    "eol-last": "off",
+    "max-len": ["error", 150, { "ignoreUrls": true }],
+    "no-alert": "off",
+    "import/prefer-default-export": ["off", { "target": "single" }],
+    "arrow-parens": ["error", "as-needed"]
+  }
+}

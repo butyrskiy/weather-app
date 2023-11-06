@@ -10,57 +10,59 @@ function getDate(date) {
   let nameOfMonth;
   let nameOfDay;
 
-  switch(month) {
-    case 0: 
+  switch (month) {
+    case 0:
       nameOfMonth = 'January';
       break;
 
-    case 1: 
+    case 1:
       nameOfMonth = 'February';
       break;
 
-    case 2: 
+    case 2:
       nameOfMonth = 'March';
       break;
 
-    case 3: 
+    case 3:
       nameOfMonth = 'April';
       break;
 
-    case 4: 
+    case 4:
       nameOfMonth = 'May';
       break;
 
-    case 5: 
+    case 5:
       nameOfMonth = 'June';
       break;
 
-    case 6: 
+    case 6:
       nameOfMonth = 'July';
       break;
 
-    case 7: 
+    case 7:
       nameOfMonth = 'August';
       break;
 
-    case 8: 
+    case 8:
       nameOfMonth = 'September';
       break;
 
-    case 9: 
+    case 9:
       nameOfMonth = 'October';
       break;
 
-    case 10: 
+    case 10:
       nameOfMonth = 'November';
       break;
 
-    case 11: 
+    case 11:
       nameOfMonth = 'December';
       break;
+
+    default:
   }
 
-  switch(dayOfWeek) {
+  switch (dayOfWeek) {
     case 1:
       nameOfDay = 'Mondey';
       break;
@@ -70,7 +72,7 @@ function getDate(date) {
       break;
 
     case 3:
-      nameOfDay = 'Wensday';
+      nameOfDay = 'Wednesday';
       break;
 
     case 4:
@@ -88,13 +90,15 @@ function getDate(date) {
     case 7:
       nameOfDay = 'Sunday';
       break;
+
+    default:
   }
 
   const objDate = {
-    day: day,
+    day,
     nameDay: nameOfDay,
     month: nameOfMonth,
-    year: year,
+    year,
   };
 
   return objDate;

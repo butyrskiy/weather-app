@@ -1,13 +1,18 @@
-import { input, serverUrl, apiKey } from "./constants";
-import { setWeatherInfo } from "./dom";
+/* eslint-disable import/no-cycle */
+import { input, serverUrl, apiKey } from './constants';
+import { renderCity } from './renderCity';
+
+const cityArr = [];
 
 function getCityInfo(url) {
   try {
     fetch(url)
-    .then((response) => response.json())
-    .then((data) => setWeatherInfo(data))
-    .catch(err => console.log(err));
-  } catch(err) {
+      .then(response => response.json())
+      .then(data => {
+        renderCity(data);
+      })
+      .catch(err => console.log(err));
+  } catch (err) {
     console.log(err);
   }
 }
@@ -24,4 +29,4 @@ function getCityName(e) {
   getCityInfo(url);
 }
 
-export { getCityName };
+export { getCityName, cityArr };

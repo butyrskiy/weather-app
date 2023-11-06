@@ -1,14 +1,40 @@
 /* eslint-disable import/no-cycle */
-import { infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, weatherImgEl, imgUrl } from "./constants";
-import { cityArr } from "../main";
+import {
+  infoBtn, infoDiv, infoTopDiv, infoBottomDiv, infoStartMessage, weatherImgEl, imgUrl,
+} from './constants';
+import { cityArr } from './getCityInfo';
+import { addFavoriteCity, favoriteCitiesSet } from './renderFavoriteCities';
+import { storage } from './localStorage';
 
-function searchCityIndex(name) {
-  return cityArr.findIndex(item => item.cityName === name);
+function searchCityIndex(name, source) {
+  if (typeof (source) === 'object') {
+    const res = [...source];
+    return res.findIndex(item => item.name === name);
+  }
+  return source.findIndex(item => item.name === name);
 }
 
-function searchCity(name) {
-  const res = cityArr.find(item => item.cityName === name);
+function checkCopy(city) {
+  let res = true;
+  favoriteCitiesSet.forEach(item => {
+    if (item.name === city.name) {
+      res = false;
+    }
+  });
+
   return res;
+}
+
+function searchFavoriteCity() {
+  const res = cityArr[cityArr.length - 1];
+
+  if (checkCopy(res)) {
+    addFavoriteCity(res);
+  }
+}
+
+function updateFavorityCitiesInSorage(data) {
+  storage.setFavoriteCities([...data]);
 }
 
 function firstLetterToUpperCase(str) {
@@ -21,7 +47,7 @@ function firstLetterToUpperCase(str) {
   return res.join(' ');
 }
 
-function startSearchCity() {
+function showCityDisplay() {
   infoBtn.classList.remove('is-hidden');
   infoDiv.classList.remove('info--start');
   infoTopDiv.classList.remove('is-hidden');
@@ -30,7 +56,10 @@ function startSearchCity() {
 }
 
 function setUrlFromWeatherIcon(iconId) {
-  weatherImgEl.setAttribute('src', `${imgUrl}/${iconId}@2x.png`)
+  weatherImgEl.setAttribute('src', `${imgUrl}/${iconId}@2x.png`);
 }
 
-export { searchCityIndex, searchCity, firstLetterToUpperCase, startSearchCity, setUrlFromWeatherIcon };
+export {
+  // eslint-disable-next-line max-len
+  searchCityIndex, firstLetterToUpperCase, showCityDisplay, setUrlFromWeatherIcon, searchFavoriteCity, updateFavorityCitiesInSorage,
+};
